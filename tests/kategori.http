@@ -1,0 +1,50 @@
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat jamu"
+}
+
+###
+
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat kencur"
+}
+
+###
+
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat jahe"
+}
+
+###
+
+GET localhost:3001/obat/kategori
+Accept: application/json
+
+###
+
+GET localhost:3001/obat/kategori/6
+Accept: application/json
+
+###
+
+PUT localhost:3001/obat/kategori/909
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat baru anak iblis"
+}
+
+###
+DELETE localhost:3001/obat/kategori/3

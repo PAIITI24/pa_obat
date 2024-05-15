@@ -1,0 +1,72 @@
+### POST
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat jamu"
+}
+
+###
+
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat ringan"
+}
+
+###
+
+POST localhost:3001/obat/kategori
+Content-Type: application/json
+Accept: application/json
+
+{
+  "nama_kategori_obat" : "obat family"
+}
+
+###
+
+PUT localhost:3001/obat/1
+Content-Type: application/json
+Accept: application/json
+
+{
+  "kategori_obat" : [3],
+  "data_obat" : {
+    "nama_obat" : "obat jepang",
+    "dosis_obat" : "3x sehari",
+    "bentuk_sediaan" : "cair",
+    "harga" : 50000.0
+  }
+}
+
+###
+
+POST localhost:3001/obat/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "kategori_obat" : [1, 2, 3],
+  "data_obat" : {
+    "nama_obat" : "oryza magenta",
+    "dosis_obat" : "sesuai resep dokter",
+    "bentuk_sediaan" : "cair",
+    "harga" : 50000.0
+  }
+}
+
+###
+
+GET localhost:3001/obat/
+
+###
+
+GET localhost:3001/obat/kategori
+
+###
+
+DELETE localhost:3001/obat/3
