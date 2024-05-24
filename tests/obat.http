@@ -61,6 +61,38 @@ Accept: application/json
 
 ###
 
+POST localhost:3001/obat/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "kategori_obat" : [1, 3],
+  "data_obat" : {
+    "nama_obat" : "oryza magenta n",
+    "dosis_obat" : "sesuai resep dokter",
+    "bentuk_sediaan" : "cair",
+    "harga" : 50000.0
+  }
+}
+
+###
+
+POST localhost:3001/obat/
+Content-Type: application/json
+Accept: application/json
+
+{
+  "kategori_obat" : [2],
+  "data_obat" : {
+    "nama_obat" : "oryza magenta nn",
+    "dosis_obat" : "sesuai resep dokter",
+    "bentuk_sediaan" : "cair",
+    "harga" : 50000.0
+  }
+}
+
+###
+
 GET localhost:3001/obat/
 
 ###
