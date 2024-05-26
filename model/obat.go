@@ -10,7 +10,7 @@ type KategoriObat struct {
 	NamaKategoriObat string    `json:"nama_kategori_obat" gorm:"type:varchar(50)"`
 	CreatedAt        time.Time `json:"created_at" gorm:"autoCreateTime" db:"created_at"`
 	UpdatedAt        time.Time `json:"updated_at" gorm:"autoUpdateTime" db:"updated_at"`
-	Obat             []Obat    `json:"kategori,omitempty" gorm:"many2many:kategorisasi"`
+	Obat             []Obat    `json:"obat,omitempty" gorm:"many2many:kategorisasi"`
 }
 
 type Obat struct {
