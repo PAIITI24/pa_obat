@@ -42,18 +42,12 @@ func ListKategori(ctx fiber.Ctx) error {
 }
 
 func GetKategori(ctx fiber.Ctx) error {
-	var FoundKategori model.KategoriObat
+	var QueryResult []model.KategoriObat
+
 	id, _ := strconv.Atoi(ctx.Params("id"))
+	db.Preload("Obat").Find(&QueryResult, id)
 
-	search := db.Preload("Obat").First(&FoundKategori, id)
-
-	if search.RowsAffected <= 0 {
-		return ctx.Status(404).JSON(fiber.Map{
-			"status": 404,
-		})
-	}
-
-	return ctx.Status(200).JSON(FoundKategori)
+	return ctx.Status(200).JSON(QueryResult)
 }
 
 func UpdateKategori(ctx fiber.Ctx) error {
