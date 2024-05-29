@@ -61,7 +61,7 @@ func ListObat(ctx fiber.Ctx) error {
 
 func GetObat(ctx fiber.Ctx) error {
 
-	var dataObat model.Obat
+	var dataObat []model.Obat
 
 	id, _ := strconv.Atoi(ctx.Params("id"))
 	result := db.Preload("KategoriObat").Find(&dataObat, id)

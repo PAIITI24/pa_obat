@@ -10,7 +10,7 @@ type KategoriObat struct {
 	NamaKategoriObat string    `json:"nama_kategori_obat" gorm:"type:varchar(50)"`
 	CreatedAt        time.Time `json:"created_at" gorm:"autoCreateTime" db:"created_at"`
 	UpdatedAt        time.Time `json:"updated_at" gorm:"autoUpdateTime" db:"updated_at"`
-	Obat             []Obat    `json:"obat,omitempty" gorm:"many2many:kategorisasi"`
+	Obat             []Obat    `json:"obat,omitempty" gorm:"many2many:kategorisasi;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }
 
 type Obat struct {
@@ -23,7 +23,7 @@ type Obat struct {
 	Gambar        string         `json:"gambar" gorm:"type:text"`
 	CreatedAt     time.Time      `json:"created_at" gorm:"autoCreateTime" db:"created_at"`
 	UpdatedAt     time.Time      `json:"updated_at" gorm:"autoUpdateTime" db:"updated_at"`
-	KategoriObat  []KategoriObat `json:"kategori,omitempty" gorm:"many2many:kategorisasi"`
+	KategoriObat  []KategoriObat `json:"kategori,omitempty" gorm:"many2many:kategorisasi;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }
 
 func (K *KategoriObat) MarshalJSON() ([]byte, error) {
